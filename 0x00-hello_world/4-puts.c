@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 /**
- *main in an entry point
- *put ur code inside the main
- *return 0 sends back a 'true' value
+ *main - Entry point
+ *Return:Always 0 (Success)
  */
 
 int main(void){
