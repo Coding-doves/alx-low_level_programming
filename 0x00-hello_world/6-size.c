@@ -1,20 +1,22 @@
-#!/bin/bash
 #include <stdio.h>
 
-/* to print sizeof, the printing format could be %zu or %lu */
+/**
+ *main - Entry point
+ *Return:Always 0 (Success)
+ */
 
 char a;
-int a;
-long int a;
-long long int a;
-float a;
+int b;
+long int c;
+long long int d;
+float e;
 
 int main(void){
-	printf("Size of a char: %lu", sizeof(a));
-	printf("Size of a int: %Zu", sizeof(a));
-	printf("Size of a long int: %Zu", sizeof(a));
-	printf("Size of a long long int: %lu", sizeof(a));
-	printf("Size of a float: %lu", sizeof(a));
+	printf("Size of a char: %lu byte(s)\n", sizeof(a));
+	printf("Size of a int: %Zu byte(s)\n", sizeof(b));
+	printf("Size of a long int: %Zu byte(s)\n", sizeof(c));
+	printf("Size of a long long int: %lu byte(s)\n", sizeof(d));
+	printf("Size of a float: %lu byte(s)\n", sizeof(e));
 
 	return 0;
 }
