@@ -2,16 +2,16 @@
 
 /**
  * main - Prints all single digit numbers of base 10 starting from 0,
- *        only using putchar and without char variables.
+ *        using putchar and without char variables.
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	int num;
+	int b_num;
 
-	for (num = 0; num < 10; num++)
-		putchar((num % 10) + '0');
+	for (b_num = 0; b_num < 10; b_num++)
+		putchar((b_num % 10) + '0');
 
 	putchar('\n');
 
