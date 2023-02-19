@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-	int num;
-	char letter;
+	int b_num;
+	char b_alphabet;
 
-	for (num = 0; num < 10; num++)
-		putchar((num % 10) + '0');
+	for (b_num = 0; b_num < 10; b_num++)
+		putchar((b_num % 10) + '0');
 
-	for (letter = 'a'; letter <= 'f'; letter++)
-		putchar(letter);
+	for (b_alphabet = 'a'; b_alphabet <= 'f'; b_alphabet++)
+		putchar(b_alphabet);
 
 	putchar('\n');
 
