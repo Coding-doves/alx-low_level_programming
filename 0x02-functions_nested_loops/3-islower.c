@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _islower - check for lowercase; 
- * @a - is the container
+ * _islower - check for lowercase;
+ * @a: is the container
  * Return: 1 for lowercase or 0 for anything else
  */
 
