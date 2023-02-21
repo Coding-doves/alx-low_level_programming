@@ -11,7 +11,7 @@ char alphabet;
 int i = 0;
 while (i <= 9)
 {
-for (alphabet = 'a'; alphabet < 'z'; alphabet++)
+for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
 {
 _putchar(alphabet);
 }
