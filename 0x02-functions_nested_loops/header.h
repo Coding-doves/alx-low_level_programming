@@ -1,1 +1,0 @@
-int displayPutchar(char c);

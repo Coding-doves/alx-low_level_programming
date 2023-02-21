@@ -1,8 +1,0 @@
-#include <unistd.h>
-
-/*displayPuchar - writes the character c to stdout*/
-
-int displayPuchar(char c)
-{
-  return (write(1, &c, 1));
-}
