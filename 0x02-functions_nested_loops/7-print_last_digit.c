@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * int print_last_digit(int) - prints last digit number
+ * print_last_digit(int) - prints last digit number
  * @n: container
  * Return: value of the last digit
  */
