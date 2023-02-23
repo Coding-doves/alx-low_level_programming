@@ -1,7 +1,6 @@
 #include "main.h"
 /**
  * print_most_numbers - do not print 2 and 4
- * @c: container
  * Return: void
  */
 
