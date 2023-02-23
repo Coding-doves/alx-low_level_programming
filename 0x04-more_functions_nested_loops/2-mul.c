@@ -2,8 +2,9 @@
 
 /**
  * mul - multiplies two numbers
- * @c: is the variable
- * Return: 0
+ * @a: is the variable
+ * @b: same as a
+ * Return: multiplication of a & b
  */
 
 int mul(int a, int b)
