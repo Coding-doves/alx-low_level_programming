@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_diagonal - print diagonal from right
+ * print_triangle - print diagonal from right
  * @size: variable
  * Return: void
  */
