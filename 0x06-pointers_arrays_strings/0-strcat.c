@@ -4,7 +4,7 @@
  * _strcat - fuction to concat two words
  * @dest: string 1
  * @src: string 2
- * Return: dest 
+ * Return: dest
  */
 
 char *_strcat(char *dest, char *src)
@@ -19,8 +19,10 @@ char *_strcat(char *dest, char *src)
 
 	for (a = 0; a < src[a]; a++)
 	{
-		dest[i] += src[j];
+		dest[i] = src[j];
+		i++;
 	}
 
+	dest[i] = '\0';
 	return (dest);
 }
