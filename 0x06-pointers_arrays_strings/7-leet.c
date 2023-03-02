@@ -2,7 +2,7 @@
 
 /**
  * leet - replace letter with words
- * @r: varaiable
+ * @r: input value
  * Return: r
  */
 
@@ -14,7 +14,7 @@ char *leet(char *r)
 
 	for (i = 0; r[i] != '\0'; i++)
 	{
-		for (j = 0; j <= 10; j++)
+		for (j = 0; j < 10; j++)
 		{
 			if (r[i] == l1[j])
 			{
