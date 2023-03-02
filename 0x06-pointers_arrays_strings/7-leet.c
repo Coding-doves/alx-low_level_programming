@@ -2,25 +2,25 @@
 
 /**
  * leet - replace letter with words
- * @r: input value
- * Return: r
+ * @n: input value
+ * Return: n
  */
 
-char *leet(char *r)
+char *leet(char *n)
 {
 	int i, j;
-	char l1[] = "aAeEoOtTlL";
-	char l2[] = "4433007711";
+	char e1[] = "aAeEoOtTlL";
+	char e2[] = "4433007711";
 
-	for (i = 0; r[i] != '\0'; i++)
+	for (i = 0; n[i] != '\0'; i++)
 	{
 		for (j = 0; j < 10; j++)
 		{
-			if (r[i] == l1[j])
+			if (n[i] == e1[j])
 			{
-				r[i] = l2[j];
+				n[i] = e2[j];
 			}
 		}
 	}
-	return (r);
+	return (n);
 }
