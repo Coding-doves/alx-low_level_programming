@@ -2,15 +2,14 @@
 
 /**
  * cap_string - capitalize words of a string
- * @c: variable
+ * @c: string to capitalize
  * Return:
  */
 
 char *cap_string(char *c)
 {
-	int i;
+	int i = 0;
 
-	i = 0;
 	while (c[i])
 	{
 		while (!(c[i] >= 97 && c[i] <= 122))
@@ -30,7 +29,8 @@ char *cap_string(char *c)
 		c[i - 1] == '(' ||
 		c[i - 1] == ')' ||
 		c[i - 1] == '{' ||
-		c[i - 1] == '}')
+		c[i - 1] == '}' ||
+		i == 0)
 		{
 			c[i] = c[i] - 32;
 		}
