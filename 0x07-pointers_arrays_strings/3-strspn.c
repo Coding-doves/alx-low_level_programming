@@ -9,22 +9,22 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, j, bool seen;
+	unsigned int i, j, bool;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		bool seen = false;
+		bool = 1;
 
 		for (j = 0; accept[j] != '\0'; j++)
 		{
 			if (accept[j] == s[i])
 			{
-			seen = true;
-			break;
-			}
-			if (!seen)
+				bool = 0;
 				break;
+			}
 		}
+		if (bool == 1)
+			break;
 	}
 	return (i);
 }
