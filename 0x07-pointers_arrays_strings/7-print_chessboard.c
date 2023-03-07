@@ -3,21 +3,23 @@
 /**
  * print_chessboard -  function that prints the chessboard.
  * @a: pointer to  array
- * Return: nothing
+ * Return: 0
  */
 
 void print_chessboard(char (*a)[8]);
 {
-	int i, j;
+	int i, S1, S2;
 
-	for (i = 0; i < 8; i++)
+	S1 = 0;
+	S2 = 0;
 
+	for (i = 0; i < (size * size); i++)
 	{
-		for (j = 0; j <= 8; j++)
-		{
-			if (j == 8)
-				_putchar('\n');
-			else
-				_putchar(a[i][j]);
-		}
+		if (i % (size + 1) == 0)
+			S1 += a[i];
+		if (i % (size - 1) == 0 && i != 0 && i < size * size - 1)
+			S2 += a[i];
 	}
+	printf("%d, %d\n", S1, S2);
+}
+
