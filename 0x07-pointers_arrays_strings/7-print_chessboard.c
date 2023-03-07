@@ -8,22 +8,17 @@
 
 void print_chessboard(char (*a)[8]);
 {
-	int n, j;
+	int n, j, sqr;
 
-	n = 0;
-
-	while (n < 8)
+	for (n = 0; n < 8; n++)
 	{
-		j = 0;
-
-		while (j < 8)
+		for (j = 0; j < 16; j++)
 		{
-			_putchar (a[n][j]);
-			j++;
+			sqr = n * 16 + j;
+			_putchar (a[sqr]);
 		}
 
 		_putchar ('\n');
-		n++;
 	}
 }
 
