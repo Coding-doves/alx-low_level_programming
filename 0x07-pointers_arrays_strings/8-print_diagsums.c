@@ -15,8 +15,12 @@ void print_diagsums(int *a, int size)
 
 	for (i = 0; i < size; i++)
 	{
-			sum = sum + a[i][i];
+		for  (j = 0; j < size; j++)
+		{
+			if (i == j)
+				sum = sum + a[i][j];
+		}
 	}
 
-	printf("%d\n", sum);
+	printf("%d", a[i][j]);
 }
