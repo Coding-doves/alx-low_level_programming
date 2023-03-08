@@ -14,7 +14,7 @@ int check_palin_len(char *s)
 	if (s[1] == '\0')
 		return (1);
 	else
-		return (check_palin_len(s[1] + 1));
+		return (check_palin_len(&s[1] + 1));
 }
 
 /**
