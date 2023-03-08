@@ -31,13 +31,13 @@ int check_palindrome(char *s, int f, int l)
 	{
 		return (1);
 	}
-	else if (s[f] == s[l])
+	else if (s[f] != s[l])
 	{
-		return (check_palindrome(s, f + 1, l - 1));
+		return (0);
 	}
 	else
 	{
-		return (0);
+		 return (check_palindrome(s, f + 1, l - 1));
 	}
 }
 
