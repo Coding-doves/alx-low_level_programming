@@ -14,21 +14,17 @@ int main(int argc, char *argv[])
 {
 	int i, j, sum = 0;
 
-	i = 0;
-	while (i < argc)
+	for (i = 1; i < argc; i++)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
 			if (!isdigit(argv[i][j]))
 			{
 				printf("Error\n");
 				return (1);
 			}
-			j++;
 		}
 		sum += atoi(argv[i]);
-		i++;
 	}
 	printf("%d\n", sum);
 	return (0);
