@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 /**
- * main - entry point
+ * main - program that adds positive numbers.
  * @argc: rep num of things entered into the command line(on the terminal)
  * @argv: an array that holds the string value of the things entered on the
  * command line(in the terminal)
