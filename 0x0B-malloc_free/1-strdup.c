@@ -7,9 +7,9 @@
  * Return: i
  */
 
-int _strlen(int *len)
+int _strlen(char *len)
 {
-	int i = 0;
+	unsigned int i = 0;
 
 	while (len[i] == '\0')
 		i++;
@@ -39,5 +39,6 @@ char *_strdup(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 		newp[i] = str[i];
 
+	free(newp);
 	return (newp);
 }
