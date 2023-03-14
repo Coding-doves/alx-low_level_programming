@@ -9,7 +9,7 @@ i
 
 int _strlen(char *len)
 {
-	unsigned int i = 0;
+	int i = 0;
 
 	while (len[i] != '\0')
 		i++;
@@ -31,7 +31,7 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	newp = (char *)malloc(sizeof(char) * (_strlen(str)));
+	newp = (char *)malloc(sizeof(char) * _strlen(str));
 
 	if (newp == NULL)
 		return (NULL);
