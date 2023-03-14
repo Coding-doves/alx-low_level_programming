@@ -39,7 +39,5 @@ char *_strdup(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 		newp[i] = str[i];
 
-	newp[i] = str[i];
-	free(newp);
 	return (newp);
 }
