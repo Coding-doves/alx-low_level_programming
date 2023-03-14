@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-i
+
 /**
  * _strlen - get the length of string
  * @len: variable
@@ -9,7 +9,7 @@ i
 
 int _strlen(char *len)
 {
-	int i = 0;
+	unsigned int i = 0;
 
 	while (len[i] != '\0')
 		i++;
@@ -26,7 +26,7 @@ int _strlen(char *len)
 char *_strdup(char *str)
 {
 	char *newp;
-	int i;
+	unsigned int i;
 
 	if (str == NULL)
 		return (NULL);

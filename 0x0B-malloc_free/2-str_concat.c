@@ -16,7 +16,7 @@ int _strlen(int *sr)
 	return (i);
 }
 
-/** 
+/**
  * str_concat - a function that concatenates two strings.
  * @s1: destination string
  * @s2: source string
