@@ -1,3 +1,9 @@
-# alx-low_level_programming
-alx-low_level_programming
-C programming
+	Basic c sturture
+	Variables
+	Debugging
+	Loops and nested Loops
+	Function
+	Pointers
+	Recursion
+	Static library
+	argc and argv
