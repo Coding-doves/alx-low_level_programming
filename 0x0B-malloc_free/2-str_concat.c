@@ -26,6 +26,7 @@ int _strlen(int *sr)
 char *str_concat(char *s1, char *s2)
 {
 	char *cat;
+	int i = 0, j = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -38,13 +39,12 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 
 	while (s1[i] != '\0')
-		cat[i] = s1[i];
 		i++;
 	while (s2[j] != '\0')
 	{
-		cat[i + j] = s2[j];
 		j++;
 	}
 
+	*cat = s1[i] + s2[i];
 	return (cat);
 }
