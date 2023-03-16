@@ -23,6 +23,5 @@ int *array_range(int min, int max)
 	for (int i = min; i <= max; i++)
 		ptr[i] = min;
 
-	free(ptr);
 	return (ptr);
 }
