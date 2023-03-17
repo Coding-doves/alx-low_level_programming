@@ -7,7 +7,7 @@
  * Return: i to pass length through pointer
  */
 
-int _strlen(char *c)
+unsigned int _strlen(char *c)
 {
 	unsigned int i;
 
