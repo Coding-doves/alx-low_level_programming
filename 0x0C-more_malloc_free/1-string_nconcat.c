@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * _strlen - get string length
+ * @c: pointer
+ * Return: i to pass length through pointer
+ */
+
 int _strlen(char *c)
 {
 	unsigned int i;
