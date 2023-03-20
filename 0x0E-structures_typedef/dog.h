@@ -2,7 +2,7 @@
 #define DOGTYPE
 
 /**
- * struct dog_t - Define a new type
+ * struct dog - Define a new type
  * @name: of dog
  * @age: of dog
  * @owner: of dog
