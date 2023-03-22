@@ -1,4 +1,3 @@
-#include <stddef.h>
 #ifndef _FUNC_POINTER_
 #define _FUNC_POINTER_
 
