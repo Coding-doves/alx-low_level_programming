@@ -1,13 +1,15 @@
 #include <stdio.h>
-#include "function_pointers.h"
+#include <stdlib.h>
+#include "3-calc.h"
 
 /**
  * main - entry point for  calculation
- *
+ * @argc: counter
+ * @argv: vec
  * Return: 0
  */
 
-int main (int argc, char argv)
+int main(int argc, char argv)
 {
 	int num1, num2;
 	char *operator;
