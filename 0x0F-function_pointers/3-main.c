@@ -4,29 +4,38 @@
 
 /**
  * main - entry point for  calculation
- * @argc: counter
- * @argv: vec
+ * @b: argument counter; provide number of argument
+ * @a: array/argument
  * Return: 0
  */
 
-int main(int argc, char argv)
+int main(int a, char *b[])
 {
 	int num1, num2;
-	char *operator;
+	int (*calc)(int, int);
 
-	if (argc != 4)
+	if (a != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
+	if (b[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
 
-	if ((*operator == "/" || *operator == "%") && num2 == 0)
+	num1 = atoi(b[1]);
+	num2 = atoi(b[3]);
+	if ((*b[2] == '/' || *b[2] == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	printf("%d\n", get_op_func(operator)(num1, num2));
+	calc = get_op_func(b[2]);
+
+	printf("%d\n", calc(num1, num2));
 
 	return (0);
 }
