@@ -19,15 +19,15 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
-		char *out = va_arg(str, char *);
+		const char *out = va_arg(str, const char *);
 
 		if (out == NULL)
-			printf("%s", "(nil)");
+			printf("(nil)");
 
 		printf("%s", out);
 
 		/*if i(the counterLoop) is not equal to the last number of string(n-1)*/
-		if (separator && i != n - 1)
+		if (separator != NULL && i != n - 1)
 			printf("%s", separator);
 	}
 

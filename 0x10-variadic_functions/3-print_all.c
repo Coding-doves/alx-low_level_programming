@@ -13,8 +13,8 @@ void print_all(const char * const format, ...)
 	va_list all;
 
 	unsigned int i = 0, j;
-	const char fmt[] = "cifs";
 	const char *st;
+	const char fmt[] = "cifs";
 
 	va_start(all, format);
 
@@ -43,7 +43,7 @@ void print_all(const char * const format, ...)
 				st = va_arg(all, char *);
 				if (st == NULL)
 				{
-					printf("nil");
+					printf("(nil)");
 					break;
 				} printf("%s", st);
 				break;
