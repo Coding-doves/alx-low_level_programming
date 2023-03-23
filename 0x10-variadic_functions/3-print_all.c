@@ -14,10 +14,8 @@ void print_all(const char * const format, ...)
 
 	unsigned int i = 0, j;
 	const char fmt[] = "cifs";
-	int ch, in;
-	float fl;
-	char *st;
-	
+	const char *st;
+
 	va_start(all, format);
 
 	while (format && format[i])
@@ -36,16 +34,13 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				ch = va_arg(all, int);
-				printf("%c", ch);
+				printf("%c", va_arg(all, int));
 				break;
 			case 'i':
-				in = va_arg(all, int);
-				printf("%d", in);
+				printf("%d", va_arg(all, int));
 				break;
 			case 'f':
-				fl = va_arg(all, double);
-				printf("%f", fl);
+				printf("%f", va_arg(all, double));
 				break;
 			case 's':
 				st = va_arg(all, char *);
