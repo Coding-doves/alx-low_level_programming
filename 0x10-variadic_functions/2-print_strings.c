@@ -29,9 +29,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		/*if i(the counterLoop) is not equal to the last number of string(n-1)*/
 		if (i != n - 1)
 			printf("%s", separator);
+		else
+			printf("\n");
 	}
-
-	printf("\n");
 
 	va_end(str);
 }
