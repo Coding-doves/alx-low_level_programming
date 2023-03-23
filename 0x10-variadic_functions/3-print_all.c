@@ -12,14 +12,17 @@ void print_all(const char * const format, ...)
 {
 	va_list all;
 
-	unsigned i = 0, j,;
+	unsigned int i = 0, j;
 	const char fmt[] = "cifs";
-
+	int ch, in;
+	float fl;
+	char *st;
+	
 	va_start(all, format);
 
 	while (format && format[i])
 	{
-		j = 0;
+		j = 1;
 		while (fmt[j])
 		{
 			if (format[i] == fmt[j])
@@ -29,23 +32,23 @@ void print_all(const char * const format, ...)
 			}
 			j++;
 		}
-		int ch = va_arg(all, int);
-		int in = va_arg(all, int);
-		float fl = va_arg(all, double);
-		char *st = va_arg(all, char *);
 
 		switch (format[i])
 		{
 			case 'c':
+				ch = va_arg(all, int);
 				printf("%c", ch);
 				break;
 			case 'i':
+				in = va_arg(all, int);
 				printf("%d", in);
 				break;
 			case 'f':
+				fl = va_arg(all, double);
 				printf("%f", fl);
 				break;
 			case 's':
+				st = va_arg(all, char *);
 				if (st == NULL)
 				{
 					printf("nil");
