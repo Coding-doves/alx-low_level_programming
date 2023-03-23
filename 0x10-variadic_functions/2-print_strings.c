@@ -23,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		if (out == NULL)
 			printf("nil");
-
+		else
 		printf("%s", out);
 
 		/*if i(the counterLoop) is not equal to the last number of string(n-1)*/
