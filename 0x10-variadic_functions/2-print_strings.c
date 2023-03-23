@@ -22,8 +22,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		char *out = va_arg(str, char *);
 
 		if (out == NULL)
-			printf("nil");
-		else
+			printf("%s", "nil");
+
 		printf("%s", out);
 
 		/*if i(the counterLoop) is not equal to the last number of string(n-1)*/
