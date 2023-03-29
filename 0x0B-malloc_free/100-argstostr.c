@@ -28,8 +28,8 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 	{
 		strcpy(&str[pos], av[i]);
-                pos += strlen(av[i]);
-                str[pos++] = '\n';
+		pos += strlen(av[i]);
+		str[pos++] = '\n';
 	}
 	return (str);
 }
