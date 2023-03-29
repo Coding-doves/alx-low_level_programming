@@ -3,6 +3,11 @@
 
 #define DELIMITER " "
 
+/**
+ * count_words - function to count words
+ * @str: input str
+ * Return: count
+ */
 int count_words(char *str)
 {
 	int count = 0;
@@ -22,6 +27,12 @@ int count_words(char *str)
 
 	return (count);
 }
+
+/**
+ * strtow - function to split string into word
+ * @str: input to split
+ * Return: NULL or " "
+ */
 
 char **strtow(char *str)
 {
@@ -45,7 +56,7 @@ char **strtow(char *str)
 			str++;
 
 		if (*str == '\0')
-   	         break;
+			break;
 
 		j = 0;
 		while (str[j] != ' ' && str[j] != '\0')
