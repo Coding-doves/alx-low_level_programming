@@ -10,7 +10,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int length = 0, i, pos;
+	int length = 0, i, j, pos;
 	char *str;
 
 	if (ac == 0 || av == NULL)
@@ -19,20 +19,19 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 		length += strlen(av[i]) + 1;
 
-	str = (char *)malloc((length + ac) * sizeof(char));
+	str = (char *)malloc(length * sizeof(char));
 
 	if (str == NULL)
 		return (NULL);
 
-	pos = 0;
 	for (i = 0; i < ac; i++)
 	{
-		strcpy(&str[pos], av[i])
-			pos += strlen(av[i]);
-		if (i != ac - 1)
-			str[pos++] = '\n';
+		for (j = 0; av[i][j] != '\0'; j++) {
+		str[pos++] = av[i][j];
+        }
+		str[pos++] = '\n';
 	}
-
+	str[pos] = '\0';
 	return (str);
 }
 
