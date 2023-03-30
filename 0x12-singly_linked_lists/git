@@ -1,0 +1,1 @@
+git add . && git commit -m 'singly linked list' && git push
