@@ -6,15 +6,15 @@
  * Return: nothing
  */
 
-void free_listint(listint_t *head)
+void free_listint2(listint_t **head)
 {
 	listint_t *ptr;
 
-	while (head != NULL)
+	while (*head != NULL)
 	{
-		ptr = head;
-		head = head->next;
+		ptr = *head;
+		*head = *head->next;
 		free(ptr);
 	}
-	head = NULL;
+	*head = NULL;
 }
