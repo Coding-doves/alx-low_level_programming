@@ -11,6 +11,8 @@ size_t print_listint_safe(const listint_t *head)
 	size_t num = 0;
 	const listint_t *ptr = head;
 
+	if (ptr == NULL)
+		return (0);
 	while (ptr != NULL)
 	{
 		printf("[%p] %d\n", (void *) ptr, ptr->n);
@@ -25,7 +27,5 @@ size_t print_listint_safe(const listint_t *head)
 		}
 	}
 
-	if (ptr == NULL)
-		return (num);
 	return (num);
 }
