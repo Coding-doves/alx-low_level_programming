@@ -17,16 +17,16 @@ listint_t *find_listint_loop(listint_t *head)
 		hare = hare->next->next;
 
 		if (tor == hare)
+		{
+			hare = head;
+			while (tor != hare)
+			{
+				tor = tor->next;
+				hare = hare->next;
+			}
 			return (tor);
+		}
 	}
 	return (NULL);
-
-	hare = head;
-	while (tor != hare)
-	{
-		tor = tor->next;
-		hare = hare->next;
-	}
-	return (tor);
 }
 
