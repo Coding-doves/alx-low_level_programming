@@ -20,7 +20,7 @@ size_t print_listint_safe(const listint_t *head)
 		ptr = ptr->next;
 		num++;
 
-		while (ahead != NULL && ahead->next != NULL)
+		if (ahead != NULL && ahead->next != NULL)
 		{
 			ahead = ahead->next->next;
 
@@ -32,7 +32,8 @@ size_t print_listint_safe(const listint_t *head)
 					ptr = ptr->next;
 					ahead = ahead->next;
 				}
-				return (printf("->[%p] %d\n", (void *)ptr->next, ptr->next->n));
+				printf("->[%p] %d\n", (void *)ptr->next, ptr->next->n);
+				exit(98);
 			}
 		}
 	}
