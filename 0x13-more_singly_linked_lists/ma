@@ -1,0 +1,14 @@
+
+		ahead = ahead->next->next;
+
+		if (ptr == ahead)
+		{
+			ahead = head;
+			if (ptr != ahead)
+			{
+				ptr = ptr->next;
+				ahead = ahead->next;
+			}
+			printf("->[%p] %d\n", (void *)ptr->next, ptr->next->n);
+			exit(98);
+		}
