@@ -9,8 +9,9 @@
 int str(const char *b)
 {
 	int count = 0;
+
 	if (b == NULL)
-		return(0);
+		return (0);
 	while (b[count])
 		count++;
 	return (count);
@@ -28,7 +29,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int decs = 0, base = 1, last = str(b), i;
 
 	if (b == NULL)
-	       return (0);
+		return (0);
 
 	for (i = last - 1; i > 0; i--)
 	{
@@ -40,6 +41,8 @@ unsigned int binary_to_uint(const char *b)
 	}
 	if (b[0] == '1')
 		decs += base;
+	if (b[0] == '0')
+		return (0);
 
 	return (decs);
 }
