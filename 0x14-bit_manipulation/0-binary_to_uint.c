@@ -41,8 +41,6 @@ unsigned int binary_to_uint(const char *b)
 	}
 	if (b[0] == '1')
 		decs += base;
-	if (b[0] == '0')
-		return (0);
 
 	return (decs);
 }
