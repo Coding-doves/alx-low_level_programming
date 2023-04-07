@@ -19,9 +19,9 @@ int str(const char *b)
 
 /**
  * binary_to_uint - converts a binary number to an unsigned int
- * @b: input to covert
+ * @b: input to convert
  * Return: the converted number, or 0 if input  is not 0 or 1, or NULL
- * if input is empty
+ * if input is an empty
  */
 
 unsigned int binary_to_uint(const char *b)
