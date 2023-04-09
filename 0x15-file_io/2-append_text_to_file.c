@@ -37,10 +37,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (text_content != NULL)
 	{
 		len = _strlen(text_content);
-		text_content[len] = '\n';
-		len++;
 		prt = write(p, text_content, len);
-		
+
 		if (prt == -1)
 		{
 			close(p);
