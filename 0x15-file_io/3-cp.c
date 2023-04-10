@@ -1,6 +1,7 @@
 #include "main.h"
 #define BUFFER 1024
 
+int cp_file(char *file_to, char *file_from);
 /**
  * main - copy file frommone destination to another
  * @argc: number of argument
@@ -8,7 +9,6 @@
  * Return: 0
  */
 
-int cp_file(char *file_to, char *file_from);
 
 int main(int argc, char *argv[])
 {
@@ -42,7 +42,7 @@ int cp_file(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	
+
 	dest = open(file_to, O_WRONLY | O_CREAT | O_EXCL | O_TRUNC, 0664);
 	if (dest == -1)
 	{
