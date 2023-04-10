@@ -35,6 +35,7 @@ int cp_file(char *file_from, char *file_to)
 	int dest, src;
 	char cp[BUFFER];
 	ssize_t d, s;
+	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	src = open(file_from, O_RDONLY);
 	if (src == -1)
@@ -43,7 +44,7 @@ int cp_file(char *file_from, char *file_to)
 		exit(98);
 	}
 
-	dest = open(file_to, O_WRONLY | O_CREAT | O_EXCL | O_TRUNC, 0664);
+	dest = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (dest == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
@@ -73,7 +74,5 @@ int cp_file(char *file_from, char *file_to)
 		exit(100);
 	}
 
-	close(dest);
-	close(src);
 	return (0);
 }
