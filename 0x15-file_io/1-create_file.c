@@ -29,7 +29,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	fil = open(filename, O_WRONLY | O_CREAT | O_TRUNC | O_EXCL, mode);
+	fil = open(filename, O_WRONLY | O_CREAT | O_TRUNC, mode);
 
 	if (fil == -1)
 		return (-1);
