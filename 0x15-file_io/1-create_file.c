@@ -27,19 +27,23 @@ int create_file(const char *filename, char *text_content)
 	ssize_t n = 0;
 	mode_t mode = S_IRUSR | S_IWUSR;
 
-	if (filename == NULL || text_content == NULL)
+	if (filename == NULL)
 		return (-1);
 	fil = open(filename, O_WRONLY | O_CREAT | O_TRUNC | O_EXCL, mode);
 
 	if (fil == -1)
 		return (-1);
 
+	if (text_content != NULL)
+	{
 	n += write(fil, text_content, str_len(text_content));
 	if (n != str_len(text_content))
 	{
 		close(fil);
 		return (-1);
 	}
+	}
+
 	close(fil);
 	return (1);
 }
