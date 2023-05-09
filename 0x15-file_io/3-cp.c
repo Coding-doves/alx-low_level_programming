@@ -41,15 +41,20 @@ int cp_to_file(const char *file_from, char *file_to)
 		return (-1);
 	if (access(file_from, R_OK) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s. No read permission.\n", file_from);
+		dprintf(STDERR_FILENO, "%s No read permission.\n", file_from);
 		exit(98);
 	}
-
 	fd = open(file_from, O_RDONLY);
 	if (fd == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
 		exit(98);
+	}
+
+	if (access(file_to, W_OK) == -1)
+	{
+		dprintf(STDERR_FILENO, "%s No read permission.\n", file_from);
+		exit(99);
 	}
 	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (fd2 == -1)
