@@ -39,10 +39,6 @@ int create_file(const char *filename, char *text_content)
 			return (-1);
 	}
 
-	if (text_content == NULL)
-	{
-		n = write(fil, " ", 1);
-	}
 	n = write(fil, text_content, str_len(text_content));
 	if (n != str_len(text_content))
 	{
