@@ -37,7 +37,7 @@ int cp_to_file(const char *file_from, char *file_to)
 	char *st = malloc(1024);
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
-	if (file_from == NULL || file_to == NULL)
+	if (file_to == NULL || file_from == NULL)
 		return (-1);
 
 	fd = open(file_from, O_RDONLY);
@@ -58,7 +58,8 @@ int cp_to_file(const char *file_from, char *file_to)
 		dprintf(2, "Error: Allocation failed\n");
 		exit(1);
 	}
-	while ((n = read(fd, st, str_len(file_from))) > 0)
+	while ((n = read(fd, st, str_len(file_from))) > 0 && access(file_to, W_OK) +
+			0 && access(file_from, R_OK))
 	{
 		if (n >= (1024 - 1))
 			st = realloc(st, 1024);
