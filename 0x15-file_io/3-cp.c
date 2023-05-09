@@ -51,12 +51,12 @@ int cp_to_file(const char *file_from, char *file_to)
 		exit(98);
 	}
 
+	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (access(file_to, W_OK) == -1)
 	{
-		dprintf(STDERR_FILENO, "%s No read permission.\n", file_from);
+		dprintf(STDERR_FILENO, "%s No read permission.\n", file_to);
 		exit(99);
 	}
-	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (fd2 == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", file_to);
