@@ -54,7 +54,7 @@ int cp_to_file(const char *file_from, char *file_to)
 	fd2 = open(file_to, O_CREAT | O_WRONLY, mode);
 	if (fd2 == -1)
 	{
-		fd2 = open(file_to, O_WRONLY | 0_TRUNC);
+		fd2 = open(file_to, O_WRONLY | O_TRUNC);
 		if (fd2 == -1)
 		{
 			dprintf(2, "Error: Can't write to %s\n", file_to);
