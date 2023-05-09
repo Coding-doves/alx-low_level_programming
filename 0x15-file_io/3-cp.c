@@ -34,7 +34,7 @@ int cp_to_file(const char *file_from, char *file_to)
 {
 	int fd, fd2;
 	ssize_t n, a;
-	char *st = malloc(1024);
+	char *st = malloc(1024 * sizeof(char));
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (file_to == NULL || file_from == NULL)
@@ -91,6 +91,7 @@ int cp_to_file(const char *file_from, char *file_to)
 		dprintf(2, "Error: Can't close fd %d\n", fd2);
 		exit(100);
 	}
+	free(st);
 	return (0);
 }
 
