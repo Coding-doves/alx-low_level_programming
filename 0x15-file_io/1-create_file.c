@@ -29,19 +29,21 @@ int create_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	fil = open(filename, O_WRONLY | O_CREAT | O_TRUNC, mode);
+
+	fil = open(filename, O_CREAT | O_WRONLY | O_EXCL | O_TRUNC, mode);
 
 	if (fil == -1)
 		return (-1);
 
-	if (text_content != NULL)
+	if (text_content == NULL)
 	{
-	n += write(fil, text_content, str_len(text_content));
+		write(fil, " ", 1);
+	}
+	n = write(fil, text_content, str_len(text_content));
 	if (n != str_len(text_content))
 	{
 		close(fil);
 		return (-1);
-	}
 	}
 
 	close(fil);
