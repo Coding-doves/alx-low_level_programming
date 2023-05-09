@@ -54,16 +54,8 @@ int cp_to_file(const char *file_from, char *file_to)
 	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (fd2 == -1)
 	{
-		if (errno == EEXIST)
-		{
-			dprintf(STDERR_FILENO, "%s file already exist.\n", file_to);
-			exit(99);
-		}
-		else
-		{
-			dprintf(2, "Error: Can't write from file %s %s\n", file_to, strerror(errno));
-			exit(99);
-		}
+		dprintf(2, "Error: Can't write to %s\n", file_to);
+		exit(99);
 	}
 
 	if (st == NULL)
