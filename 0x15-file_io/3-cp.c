@@ -39,6 +39,11 @@ int cp_to_file(const char *file_from, char *file_to)
 
 	if (file_to == NULL || file_from == NULL)
 		return (-1);
+	if (access(file_from, R_OK) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s. No read permission.\n", file_from);
+		exit(98);
+	}
 
 	fd = open(file_from, O_RDONLY);
 	if (fd == -1)
