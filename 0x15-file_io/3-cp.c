@@ -69,13 +69,6 @@ int cp_to_file(const char *file_from, char *file_to)
 	}
 	while ((n = read(fd, st, str_len(file_from))) > 0)
 	{
-		if (n >= (1024 - 1))
-			st = realloc(st, 1024);
-		if (st == NULL)
-		{
-			dprintf(2, "Error: Allocation failed\n");
-			exit(1);
-		}
 		a = write(fd2, st, n);
 		if (a != n)
 		{
