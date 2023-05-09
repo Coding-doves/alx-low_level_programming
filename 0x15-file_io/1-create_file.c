@@ -5,7 +5,7 @@
 * @s: input
 * Return: string size
 */
-int str_len(char *s)
+ssize_t str_len(char *s)
 {
 	int i;
 
