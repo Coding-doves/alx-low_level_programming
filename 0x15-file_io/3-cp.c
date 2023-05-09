@@ -51,7 +51,7 @@ int cp_to_file(const char *file_from, char *file_to)
 		exit(98);
 	}
 
-	fd2 = open(file_to, O_CREAT | O_WRONLY, mode);
+	fd2 = open(file_to, O_CREAT | O_WRONLY | O_EXCL, mode);
 	if (fd2 == -1)
 	{
 		fd2 = open(file_to, O_WRONLY | O_TRUNC);
