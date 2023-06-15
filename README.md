@@ -15,3 +15,4 @@
 	Singly linked list
 	Bit manipulation
 	File i/o
+	Doubly linked lists
