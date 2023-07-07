@@ -4,7 +4,7 @@
  * @ht: hash table you want to look into
  * @key: key you are looking for
  * Return: the value associated with the element,
- * or NULL if key couldn’t be found 
+ * or NULL if key couldn’t be found
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
@@ -12,7 +12,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *k;
 
 	if (ht ==  NULL || key == NULL)
-		return NULL;
+		return (NULL);
 
 	idx = key_index((const unsigned char *)key, ht->size);
 
@@ -21,7 +21,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (k != NULL)
 	{
 		if (strcmp(k->key, key) == 0)
-			return k->value;
+			return (k->value);
 	}
-	return NULL;
+	return (NULL);
 }

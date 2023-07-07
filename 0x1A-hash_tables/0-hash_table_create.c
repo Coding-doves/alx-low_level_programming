@@ -10,13 +10,13 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table_t *tabl = (hash_table_t *)malloc(sizeof(hash_table_t));
 
 	if (tabl == NULL)
-		return NULL;
+		return (NULL);
 
 	tabl->size = size;
 	tabl->array = (hash_node_t **)malloc(tabl->size * sizeof(hash_node_t *));
 
-	if(tabl->array == NULL)
-		return NULL;
+	if (tabl->array == NULL)
+		return (NULL);
 
 	for (; i < tabl->size; i++)
 		tabl->array[i] = NULL;
