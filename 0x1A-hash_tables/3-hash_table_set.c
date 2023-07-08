@@ -48,7 +48,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				free(upd->value);
 				upd->value = strdup(value);
 				free_ptr(ptr);
-				return(1);
+				return (1);
 			}
 			upd = upd->next;
 		}
