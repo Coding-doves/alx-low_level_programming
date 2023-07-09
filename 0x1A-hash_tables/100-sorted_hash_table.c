@@ -33,7 +33,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * sh - sorted hash table
+ * shash_table_set - sorted hash table
  * @ht: hash table
  * @key: key
  * @value: pair
@@ -49,26 +49,22 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		free(pt);
 		return  (0);
 	}
-
 	idx = key_index((const unsigned char *)key, ht->size);
 	pt->key = strdup((char *)key);
 	pt->value = strdup((char *)value);
 	pt->next = NULL;
 	pt->sprev = NULL;
 	pt->snext = NULL;
-
 	/*insert list in their index sorted order*/
-	/*set shead and tail pointing to first and lst*/
 	if (ht->array[idx] == NULL)
-	{	
+	{ /*set shead and tail pointing to first and lst*/
 		ht->array[idx] = pt;
-		ht->shead = pt; 
+		ht->shead = pt;
 		ht->stail = pt;
 	}
 	else
 	{
 		shash_node_t *f = ht->array[idx];
-
 		while (f != NULL)
 		{
 			if (strcmp(f->key, key) == 0)
@@ -126,5 +122,5 @@ void sort_list(shash_table_t *ht, shash_node_t *pt)
 		tmp->sprev->next = pt;
 		pt->snext = tmp;
 		tmp->sprev = pt;
-	}	
+	}
 }

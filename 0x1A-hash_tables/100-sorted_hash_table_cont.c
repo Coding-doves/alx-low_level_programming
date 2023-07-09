@@ -128,24 +128,15 @@ void shash_table_delete(shash_table_t *ht)
 
 	for (i = 0; i < ht->size; i++)
 	{
-		if (ht->array[i] != NULL)
-		{
-			ptr = ht->array[i]->next;
-			free(ht->array[i]);
-			ht->array[i] = ptr;
 
-			if (ht->array[i]->next != NULL)
-			{
-				ptr = ht->array[i]->next;
-				while (ptr != NULL)
-				{
-					ptr = ht->array[i]->next;
-					free(ht->array[i]);
-					ht->array[i] = ptr;
-				}
-			}
+		ptr = ht->array[i];
+		while (ptr != NULL)
+		{
+			free(ptr->value);
+			free(ptr->key);
+			free(ptr);
+			ptr = ptr->next;
 		}
 	}
-	free(ht->array);
 	free(ht);
 }
