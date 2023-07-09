@@ -6,18 +6,25 @@
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-	shash_table_t tabl = (shash_table_t *)malloc(sizeof(shash_table_t));
+	shash_table_t *tabl = (shash_table_t *)malloc(sizeof(shash_table_t));
 	unsigned long int i;
 
 	if (tabl == NULL)
+	{
+		free(tabl);
 		return (NULL);
+	}
 
 	tabl->size = size;
 	tabl->array = malloc(sizeof(shash_node_t *) * size);
 	tabl->shead = NULL;
 	tabl->stail = NULL;
+
 	if (tabl->array == NULL)
+	{
+		free(tabl->array);
 		return (NULL);
+	}
 
 	for (i = 0; i < tabl->size; i++)
 		tabl->array[i] = NULL;
@@ -34,73 +41,90 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int i, idx;
+	unsigned long int idx;
 	shash_node_t *pt = (shash_node_t *)malloc(sizeof(shash_node_t));
 
-	if (key == NULL || value == NULL)
-		return 0;
-	if (strcmp(*key, "") == 0 || strcmp(*value, "") == 0)
-		return 0;
+	if (ht == NULL || key == NULL || *key == '\0' || pt == NULL)
+	{
+		free(pt);
+		return  (0);
+	}
 
 	idx = key_index((const unsigned char *)key, ht->size);
-	pt->key = key;
-	pt->value = value;
+	pt->key = strdup((char *)key);
+	pt->value = strdup((char *)value);
 	pt->next = NULL;
 	pt->sprev = NULL;
 	pt->snext = NULL;
 
-	/*insert list in their index*/
+	/*insert list in their index sorted order*/
+	/*set shead and tail pointing to first and lst*/
 	if (ht->array[idx] == NULL)
-	{
+	{	
 		ht->array[idx] = pt;
+		ht->shead = pt; 
+		ht->stail = pt;
 	}
 	else
 	{
-		shash_node_t *tmp;
+		shash_node_t *f = ht->array[idx];
 
-		tmp = ht->array[idx];
-		while (tmp != NULL)
+		while (f != NULL)
 		{
-			if(strcmp(tmp->key, key) == 0)
+			if (strcmp(f->key, key) == 0)
 			{
-				free(tmp->value);
-				tmp->value = strdup(ptr->value);
-				free_ptr(ptr);
+				free(f->value);
+				f->value = strdup(key);
+				free(pt->value);
+				free(pt->key);
+				free(pt);
 				return (1);
 			}
-			tmp = tmp->next;
+			f = f->next;
 		}
-		pt->prev = ht->array[idx]->prev;
-		pt->next = ht->array[idx];
-		ht->array[idx] = pt;
-
-		sort_list(ht, idx);
 	}
+	sort_list(ht, pt);
 	return (1);
 }
 
 /**
- * sort_list - sort of collision
- * @ht
- * Return:
+ * sort_list - sort hash table
+ * @ht: hash table
+ * @pt: new node
  */
-shash_node_t sort_list(shash_table_t *ht, unsigned long int idx)
+void sort_list(shash_table_t *ht, shash_node_t *pt)
 {
-	if (ht == NULL)
-		return NULL;
+	shash_node_t *tmp, *buf;
 
-	if (ht->array[idx] != NULL)
+	tmp = NULL;
+	buf = ht->shead;
+
+	while (buf != NULL)
 	{
-		if (ht->array[idx]->next != NULL)
-		{
-			while ()
-		}	
-		sot = ht->array[i];
-		for (j = i - 1; )
-		{
-			ht->array[i + j] = ht->array;
-		}
-		ht->array[i + j] = sot
+		if (strcmp(buf->key, pt->key) > 0)
+			break;
+
+		tmp = buf;
+		buf = buf->next;
 	}
-return (new);	
+
+	if (tmp == ht->shead)
+	{
+		pt->snext = ht->shead;
+		ht->shead->sprev = pt;
+		ht->shead = pt;
+	}
+	else if (tmp == NULL)
+	{
+		pt->sprev = ht->stail;
+		ht->stail->snext = pt;
+		ht->stail = pt;
+	}
+	else
+	{
+		pt->sprev = tmp->sprev;
+		tmp->sprev->next = pt;
+		pt->snext = tmp;
+		tmp->sprev = pt;
+	}	
 }
