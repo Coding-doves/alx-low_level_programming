@@ -8,4 +8,4 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
 $(OBJ): $(SRC)
-	$(CC) -c $(SRC)
+	$(CC) -c $<
