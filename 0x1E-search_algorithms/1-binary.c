@@ -47,9 +47,7 @@ high = mid - 1;
 else
 low = mid + 1;
 
-<<<<<<< HEAD
 array_index(low, high);
-
 }
 
 if (array[low] == value)
