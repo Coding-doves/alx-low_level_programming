@@ -6,7 +6,7 @@
  * @last: value to search
  * Return: value index or -1 if not in array
  */
-void array_index(size_t first, size_t last)
+void array_index(int *array, size_t first, size_t last)
 {
     int comma = 0;
 
@@ -16,7 +16,7 @@ void array_index(size_t first, size_t last)
         if (comma == 1)
             printf(", ");
 
-        printf("%ld", first);
+        printf("%ld", array[first]);
 
         comma = 1;
     }
@@ -36,7 +36,7 @@ int binary_search(int *array, size_t size, int value)
     if (array == NULL)
         return (-1);
 
-    array_index(low, high);
+    array_index(array, low, high);
     while (low != high)
     {
         mid = (low + high) / 2;
@@ -48,8 +48,7 @@ int binary_search(int *array, size_t size, int value)
         else
             low = mid + 1;
 
-        array_index(low, high);
-
+        array_index(array, low, high);
     }
 
     if (array[low] == value)
