@@ -4,7 +4,6 @@
  * @array: array
  * @first: size of array
  * @last: value to search
- * Return: value index or -1 if not in array
  */
 void array_index(int *array, size_t first, size_t last)
 {
