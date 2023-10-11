@@ -24,6 +24,7 @@ size_t jump = sqrt(size);
 
 while (array[min(jump, size) - 1] < value)
 {
+printf("Value checked array[%ld] = [%d]\n", prev_jump, array[prev_jump]);
 prev_jump = jump;
 jump += sqrt(size);
 
@@ -31,8 +32,10 @@ if (prev_jump >= size)
 return (-1);
 }
 
+printf("Value found between indexes [%ld] and [%ld]\n", prev_jump, array[prev_jump]);
 while (array[prev_jump] < value)
 {
+printf("Value checked array[%ld] = [%d]\n", prev_jump, array[prev_jump]);
 prev_jump++;
 
 if (prev_jump == min(jump, size))
@@ -41,6 +44,6 @@ return (-1);
 
 if (array[prev_jump] == value)
 return (prev_jump);
-else
+
 return (-1);
 }
