@@ -36,5 +36,6 @@ return (-1);
 }
 if (array[prev_jump] == value)
 return (prev_jump);
+
 return (-1);
 }
