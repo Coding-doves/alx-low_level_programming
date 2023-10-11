@@ -37,13 +37,14 @@ while (array[prev_jump] < value)
 {
 printf("Value checked array[%ld] = [%d]\n", prev_jump, array[prev_jump]);
 prev_jump++;
-
 if (prev_jump == min(jump, size))
 return (-1);
 }
 
 if (array[prev_jump] == value)
+{
+printf("Value checked array[%ld] = [%d]\n", prev_jump, array[prev_jump]);
 return (prev_jump);
-
+}
 return (-1);
 }
