@@ -4,7 +4,7 @@
  * @first: size of array
  * @last: value to search
  */
-void array_index(size_t first, size_t last)
+void array_index(int *array, size_t first, size_t last)
 {
 int comma = 0;
 
@@ -14,7 +14,7 @@ for (; first <= last; first++)
 if (comma == 1)
 printf(", ");
 
-printf("%ld", first);
+printf("%d", array[first]);
 
 comma = 1;
 }
@@ -34,7 +34,7 @@ size_t low = 0, mid, high = size - 1;
 if (array == NULL || size == 0)
 return (-1);
 
-array_index(low, high);
+array_index(array, low, high);
 while (low != high)
 {
 mid = (low + high) / 2;
@@ -46,7 +46,7 @@ high = mid - 1;
 else
 low = mid + 1;
 
-array_index(low, high);
+array_index(array, low, high);
 }
 
 if (array[low] == value)
