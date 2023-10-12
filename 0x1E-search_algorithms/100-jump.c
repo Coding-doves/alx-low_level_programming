@@ -19,7 +19,8 @@ return ((a < b) ? a : b);
 */
 int jump_search(int *array, size_t size, int value)
 {
-size_t prev_jump = 0; size_t jump = 0;
+size_t prev_jump = 0;
+size_t jump = 0;
 
 if (array == NULL)
 return (-1);
