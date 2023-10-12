@@ -20,6 +20,7 @@ comma = 1;
 }
 printf("\n");
 }
+
 /**
  * binary_search - search sequencialy
  * @array: array
