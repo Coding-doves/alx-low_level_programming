@@ -19,23 +19,23 @@ return ((a < b) ? a : b);
 */
 int jump_search(int *array, size_t size, int value)
 {
-size_t prev_jump = 0, size_t jump = sqrt(size);
+size_t prev_jump = 0, size_t jump = 0;
 
-while (array[min(jump, size) - 1] < value)
+while (array[jump] < value)
 {
+printf("Value checked array[%ld] = [%d]\n", jump, array[jump]);
 prev_jump = jump;
 jump += sqrt(size);
-if (prev_jump >= size)
-return (-1);
+if (jump > size - 1)
+break;
 }
-while (array[prev_jump] < value)
+printf(" Value found between indexes [0] and [3]\n", prev_jump, jump)
+while (prev_jump <= min(jump, size - 1))
 {
-prev_jump++;
-if (prev_jump == min(jump, size))
-return (-1);
-}
+printf("Value checked array[%ld] = [%d]\n", prev_jump, array[prev_jump]);
 if (array[prev_jump] == value)
 return (prev_jump);
-
+prev_jump++;
+}
 return (-1);
 }
