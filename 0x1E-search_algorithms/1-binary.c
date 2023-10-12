@@ -1,6 +1,7 @@
 #include "search_algos.h"
 /**
  * array_index - search sequencialy
+ * @array: array
  * @first: size of array
  * @last: value to search
  */
