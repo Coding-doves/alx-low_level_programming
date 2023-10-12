@@ -32,7 +32,7 @@ jump += sqrt(size);
 if (jump > size - 1)
 break;
 }
-printf(" Value found between indexes [%ld] and [%ld]\n", prev_jump, jump);
+printf("Value found between indexes [%ld] and [%ld]\n", prev_jump, jump);
 while (prev_jump <= min(jump, size - 1))
 {
 printf("Value checked array[%ld] = [%d]\n", prev_jump, array[prev_jump]);
